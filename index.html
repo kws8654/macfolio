@@ -10,14 +10,23 @@
       integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
       crossorigin="anonymous"
     ></script>
+    <style type="text/css">
+      .no-drag {
+        -ms-user-select: none;
+        -moz-user-select: -moz-none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+      }
+    </style>
     <title>Document</title>
   </head>
-  <body>
+  <body class="no-drag">
     <section class="mac">
       <div class="nav-bar">
         <span> <img src="./image/logo.png" class="nav-bar-icon" /> </span>
         <span class="option">
-          <span class="nav-bar-text"><strong>Portfolio</strong></span>
+          <span class="nav-bar-text"><strong>Wonsub's Portfolio</strong></span>
           <span class="nav-bar-text">파일</span>
           <span class="nav-bar-text">편집</span>
           <span class="nav-bar-text">보기</span>
@@ -55,29 +64,62 @@
       </div>
       <div class="home">
         <figure>
-          <img src="./image/chrome.png" class="file" />
-          <figcaption style="margin-left: 23px; color: white">
-            portfolio
+          <a href="http://kws8654.dothome.co.kr/portfolio/">
+            <img src="./image/chrome.png" class="file" />
+          </a>
+          <figcaption style="margin-left: 19px; color: white">
+            portfolio 1
           </figcaption>
         </figure>
-        <img src="./image/eclipse.png" class="file" />
-        <img src="./image/safari.png" class="file" />
-        <img src="./image/vsc.png" class="file" />
-        <div class="memo">
+        <figure>
+          <a href="http://kws8654.dothome.co.kr/portfolio/">
+            <img src="./image/eclipse.png" class="file" />
+          </a>
+          <figcaption style="margin-left: 19px; color: white">
+            portfolio 2
+          </figcaption>
+        </figure>
+        <figure>
+          <a href="http://kws8654.dothome.co.kr/portfolio/">
+            <img src="./image/safari.png" class="file" />
+          </a>
+          <figcaption style="margin-left: 19px; color: white">
+            portfolio 3
+          </figcaption>
+        </figure>
+        <figure>
+          <a href="http://kws8654.dothome.co.kr/portfolio/">
+            <img src="./image/vsc.png" class="file" />
+          </a>
+          <figcaption style="margin-left: 19px; color: white">
+            portfolio 4
+          </figcaption>
+        </figure>
+        <div class="memo" id="drag">
           <div class="memo-title">
             <button class="red"></button>
             <button class="yellow"></button>
             <button class="green"></button>
-            <strong><span style="margin: 110px">Resume</span></strong>
+            <strong>
+              <span
+                style="
+                  position: absolute;
+                  left: 50%;
+                  transform: translateX(-50%);
+                "
+                >Resume</span
+              ></strong
+            >
           </div>
           <div class="memo-content">
+            <strong style="font-size: 20px"> Wonsub Kim, 김원섭 </strong>
+            <br />
+            <br />
+            📞 010-6225-8654 <br />
+            📧 kws8654@gmail.com
             <p>
-              <strong>Wonsub Kim, 김원섭</strong>
-              010-6225-8654
-            </p>
-            <p>
-              Han-yang University_Architecture <br />
-              Sang-myung University_Stage Design
+              Han-yang University _ Architecture (13.03 - 13. 07)<br />
+              Sang-myung University _ Stage Design (15.03 - 21.02)
             </p>
             <p>
               ✔️ Java <br />
@@ -93,12 +135,21 @@
             </p>
           </div>
         </div>
-        <div class="faceTime">
+        <div class="faceTime" id="drag">
           <div class="faceTime-bar">
             <button class="red"></button>
             <button class="yellow"></button>
             <button class="green"></button>
-            <strong><span style="margin: 105px">facetime</span></strong>
+            <strong
+              ><span
+                style="
+                  position: absolute;
+                  left: 50%;
+                  transform: translateX(-50%);
+                "
+                >Facetime</span
+              ></strong
+            >
           </div>
           <div>
             <video
@@ -114,50 +165,26 @@
         </div>
         <div class="dock-bar"></div>
         <div class="dock-content">
-          <img src="./image/name.png" class="dock-image" />
-          <img src="./image/name.png" class="dock-image" />
-          <img src="./image/name.png" class="dock-image" />
-          <img src="./image/name.png" class="dock-image" />
-          <img src="./image/name.png" class="dock-image" />
-          <img src="./image/name.png" class="dock-image" />
+          <img src="./image/H.png" class="dock-image" />
+          <img src="./image/I.png" class="dock-image" />
+          <img src="./image/R.png" class="dock-image" />
+          <img src="./image/E2.png " class="dock-image" />
           <img
-            src="./image/name.png"
+            src="./image/M.png"
             class="dock-image"
-            style="margin-left: 50px"
+            style="margin-left: 100px"
           />
-          <img src="./image/name.png" class="dock-image" />
-          <img src="./image/name.png" class="dock-image" />
+          <img src="./image/E.png" class="dock-image" />
           <img
-            src="./image/name.png"
+            src="./image/notion.png"
+            src="./image/M.png"
             class="dock-image"
-            style="margin-left: 17px"
+            style="margin-left: 100px"
           />
+          <img src="./image/git.png" class="dock-image" />
         </div>
       </div>
     </section>
-
-    <script>
-      var Target = document.getElementById("clock");
-      function clock() {
-        var time = new Date();
-
-        var month = time.getMonth();
-        var date = time.getDate();
-        var day = time.getDay();
-        var week = ["일", "월", "화", "수", "목", "금", "토"];
-
-        var hours = time.getHours();
-        var minutes = time.getMinutes();
-        var seconds = time.getSeconds();
-
-        Target.innerText =
-          `${month + 1}월 ${date}일 (${week[day]}) ` +
-          `${hours < 10 ? `0${hours}` : hours}:${
-            minutes < 10 ? `0${minutes}` : minutes
-          }`;
-      }
-      clock();
-      setInterval(clock, 1000); // 1초마다 실행
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>
