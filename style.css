@@ -144,16 +144,20 @@ body {
   border-radius: 20px;
 }
 
+.dock-content {
+  position: absolute;
+  width: 900px;
+  height: 80px;
+  text-align: center;
+  padding: auto;
+  bottom: 43px;
+  left: 150px;
+}
+
 .dock-image {
   width: 65px;
   margin-left: 15px;
-  margin-bottom: 12px;
-}
-
-.dock-content {
-  position: absolute;
-  bottom: 37px;
-  left: 151px;
+  margin-top: 4px;
 }
 
 .no-drag {
