@@ -1,5 +1,5 @@
 const container = document.querySelector(".home");
-const box = container.querySelector('#drag');
+const box = container.querySelector(".memo");
 
 const { width: containerWidth, height: containerHeight } = container.getBoundingClientRect();
 const { width: boxWidth, height: boxHeight } = box.getBoundingClientRect();
@@ -10,6 +10,7 @@ let originX = null;
 let originY = null;
 
 box.addEventListener("mousedown", (e) => {
+    e.preventDefault();
     isDragging = true;
     originX = e.clientX;
     originY = e.clientY;
